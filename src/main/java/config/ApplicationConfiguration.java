@@ -22,14 +22,14 @@ import org.thymeleaf.templatemode.TemplateMode;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("controllers")
+@ComponentScan
 public class ApplicationConfiguration extends WebMvcConfigurerAdapter implements ApplicationContextAware {
 
     @Bean
     public SpringResourceTemplateResolver templateResolver() {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
         templateResolver.setApplicationContext(applicationContext);
-        templateResolver.setPrefix("/WEB-INF/views/");
+        templateResolver.setPrefix("/views/");
         templateResolver.setSuffix(".html");
         templateResolver.setTemplateMode(TemplateMode.HTML);
         return templateResolver;
@@ -49,7 +49,7 @@ public class ApplicationConfiguration extends WebMvcConfigurerAdapter implements
         viewResolver.setTemplateEngine(templateEngine());
         return viewResolver;
     }
-    
+
 
     private ApplicationContext applicationContext;
 
