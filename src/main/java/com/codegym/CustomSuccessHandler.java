@@ -1,4 +1,4 @@
-package config;
+package com.codegym;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
